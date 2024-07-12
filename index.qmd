@@ -3,10 +3,11 @@ title: "testwebsite"
 jupyter: python3
 ---
 
-This is a Quarto website.
+## 홈페이지 첫 화면입니다.!
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+안녕하세요. *백선아*입니다.
 
-```{python}
-1 + 1
-```
+**하이하이**
+*반가워요*
+
+
