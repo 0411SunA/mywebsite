@@ -124,5 +124,26 @@
     "title": "과제 0715",
     "section": "빈도 막대 그래프를 만들어 확인해 보세요.",
     "text": "빈도 막대 그래프를 만들어 확인해 보세요.\n\ncount_asia = midwest['check'].value_counts()\ncount_asia\n\ncheck\nsmall    318\nlarge    119\nName: count, dtype: int64\n\n\n\ncount_asia.plot.bar(rot = 0)"
+  },
+  {
+    "objectID": "hw1.html#q3.-total-asian-변수를-이용해-전체-인구-대비-아시아-인구-백분율-파생변수를-추가해-히스토그램을-만들어-분포를-살펴보세요.",
+    "href": "hw1.html#q3.-total-asian-변수를-이용해-전체-인구-대비-아시아-인구-백분율-파생변수를-추가해-히스토그램을-만들어-분포를-살펴보세요.",
+    "title": "과제 0715",
+    "section": "Q3. total, asian 변수를 이용해 ‘전체 인구 대비 아시아 인구 백분율’ 파생변수를 추가해 히스토그램을 만들어 분포를 살펴보세요.",
+    "text": "Q3. total, asian 변수를 이용해 ‘전체 인구 대비 아시아 인구 백분율’ 파생변수를 추가해 히스토그램을 만들어 분포를 살펴보세요.\n\nmidwest['asia_r'] = (midwest['asian'] / midwest['total'])\nmidwest['asia_r'].plot.hist()"
+  },
+  {
+    "objectID": "hw1.html#q4.-아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요.",
+    "href": "hw1.html#q4.-아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요.",
+    "title": "과제 0715",
+    "section": "Q4. 아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 ‘large’, 그 외에는 ’small’을 부여한 파생변수를 만들어 보세요.",
+    "text": "Q4. 아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 ‘large’, 그 외에는 ’small’을 부여한 파생변수를 만들어 보세요.\n\nimport numpy as np\nmidwest['mid_mean'] = midwest['asia_r'].mean()\nmidwest['check'] = np.where(midwest['asia_r'] &gt; midwest['mid_mean'], 'large', 'small' )\nmidwest.head()\n\n\n\n\n\n\n\n\nPID\ncounty\nstate\narea\ntotal\npopdensity\npopwhite\npopblack\npopamerindian\nasian\n...\npercpovertyknown\npercbelowpoverty\npercchildbelowpovert\npercadultpoverty\npercelderlypoverty\ninmetro\ncategory\nasia_r\nmid_mean\ncheck\n\n\n\n\n0\n561\nADAMS\nIL\n0.052\n66090\n1270.961540\n63917\n1702\n98\n249\n...\n96.274777\n13.151443\n18.011717\n11.009776\n12.443812\n0\nAAR\n0.003768\n0.004872\nsmall\n\n\n1\n562\nALEXANDER\nIL\n0.014\n10626\n759.000000\n7054\n3496\n19\n48\n...\n99.087145\n32.244278\n45.826514\n27.385647\n25.228976\n0\nLHR\n0.004517\n0.004872\nsmall\n\n\n2\n563\nBOND\nIL\n0.022\n14991\n681.409091\n14477\n429\n35\n16\n...\n94.956974\n12.068844\n14.036061\n10.852090\n12.697410\n0\nAAR\n0.001067\n0.004872\nsmall\n\n\n3\n564\nBOONE\nIL\n0.017\n30806\n1812.117650\n29344\n127\n46\n150\n...\n98.477569\n7.209019\n11.179536\n5.536013\n6.217047\n1\nALU\n0.004869\n0.004872\nsmall\n\n\n4\n565\nBROWN\nIL\n0.018\n5836\n324.222222\n5264\n547\n14\n5\n...\n82.505140\n13.520249\n13.022889\n11.143211\n19.200000\n0\nAAR\n0.000857\n0.004872\nsmall\n\n\n\n\n5 rows × 31 columns"
+  },
+  {
+    "objectID": "hw1.html#q5.-large와-small에-해당하는-지역이-얼마나-많은지-빈도표와-빈도-막대-그래프를-만들어-확인해-보세요.",
+    "href": "hw1.html#q5.-large와-small에-해당하는-지역이-얼마나-많은지-빈도표와-빈도-막대-그래프를-만들어-확인해-보세요.",
+    "title": "과제 0715",
+    "section": "Q5. ’large’와 ’small’에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보세요.",
+    "text": "Q5. ’large’와 ’small’에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보세요.\n\n# 빈도표\ncount_asia = midwest['check'].value_counts()\ncount_asia\n\ncheck\nsmall    318\nlarge    119\nName: count, dtype: int64\n\n\n\n# 빈도 막대 그래프\ncount_asia.plot.bar(rot = 0)"
   }
 ]
