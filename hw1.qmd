@@ -1,12 +1,81 @@
 ---
-title: "About"
+title: "과제 0715"
 jupyter: python3
 ---
 
-About this site
-
-# ctrl + alt + p
+#p.84 데이터프레임 만들기
+#Q1. 다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.
 
 ```{python}
-1 + 1
+import pandas as pd
+
+df = pd.DataFrame({'제품' : ["사과", "딸기", "수박"],
+                   '가격':  [1800, 1500, 3000],
+                   '판매량':[24, 38, 13]})
+df
 ```
+
+#Q2. 앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해 보세요.
+
+```{python}
+df["가격"].mean()
+df["판매량"].mean()
+```
+#Q1. mpg 데이터를 불러와 복사본을 만드세요.
+
+```{python}
+# p.115
+mpg = pd.read_csv('data/mpg.csv')
+mpg
+
+mpg_new = mpg.copy()
+mpg_new
+```
+
+#Q2. 복사본 데이터를 이용해 cty는 city로, hwy는 highway로 수정하세요.
+```{python}
+mpg_new = mpg_new.rename(columns = {'cty' : 'city'})
+mpg_new = mpg_new.rename(columns = {'hwy' : 'highway'})
+mpg_new
+```
+
+#Q3. 데이터 일부를 출력해 변수명이 바뀌었는지 확인해 보세요. 
+```{python}
+mpg_new.head()
+
+```
+# p.130
+# Q1 midwest.csv를 불러와 데이터의 특징을 파악하세요.
+
+```{python}
+import pandas as pd
+midwest = pd.read_csv('C:/Users/USER/Documents/LS빅데이터스쿨/Doit_Python/Data/midwest.csv')
+midwest.head()
+midwest.tail()
+midwest.shape
+midwest.info()
+midwest.describe()
+```
+
+#Q2. poptotal(전체 인구) 변수를 total로, popasian(아시아 인구) 변수를 asian으로 수정하세요.
+```{python}
+midwest = midwest.rename(columns = {'poptotal' : 'total', 'popasian' : 'asian'})
+midwest.info()
+```
+
+# Q3. total, asian 변수를 이용해 '전체 인구 대비 아시아 인구 백분율' 파생변수를 추가해 
+# 히스토그램을 만들어 분포를 살펴보세요.
+```{python}
+midwest['asia_r'] = (midwest['asian'] / midwest['total'])
+midwest['asia_r'].plot.hist()
+```
+
+# Q4. 아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 'large',
+# 그 외에는 'small'을 부여한 파생변수를 만들어 보세요.
+```{python}
+import numpy as np
+midwest['mid_mean'] = midwest['asia_r'].mean()
+midwest['check'] = np.where(midwest['asia_r'] > midwest['mid_mean'], 'large', 'small' )
+midwest.head()
+```
+

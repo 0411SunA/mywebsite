@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: dd618466-b3b7-47f2-908c-29efe05b4eb9
+      url: 'https://glistening-blini-289fee.netlify.app'
