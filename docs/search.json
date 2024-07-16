@@ -145,5 +145,19 @@
     "title": "hw1",
     "section": "Q5. ’large’와 ’small’에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보세요.",
     "text": "Q5. ’large’와 ’small’에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보세요.\n\n# 빈도표\ncount_asia = midwest['check'].value_counts()\ncount_asia\n\ncheck\nsmall    318\nlarge    119\nName: count, dtype: int64\n\n\n\n# 빈도 막대 그래프\ncount_asia.plot.bar(rot = 0)"
+  },
+  {
+    "objectID": "hw2.html#결론-displ이-4-이상인-자동차의-hwy-평균이-25.96으로-displ-5-이상인-자동의-hwy-평균18.08보다-높다.",
+    "href": "hw2.html#결론-displ이-4-이상인-자동차의-hwy-평균이-25.96으로-displ-5-이상인-자동의-hwy-평균18.08보다-높다.",
+    "title": "hw2",
+    "section": "결론: displ이 4 이상인 자동차의 hwy 평균이 25.96으로 displ 5 이상인 자동의 hwy 평균(18.08)보다 높다.",
+    "text": "결론: displ이 4 이상인 자동차의 hwy 평균이 25.96으로 displ 5 이상인 자동의 hwy 평균(18.08)보다 높다."
+  },
+  {
+    "objectID": "hw2.html#결론-toyota의-cty-평균이-더-높다.-audi의-cty-평균-17.61-toyota의-cty-평균-18.53",
+    "href": "hw2.html#결론-toyota의-cty-평균이-더-높다.-audi의-cty-평균-17.61-toyota의-cty-평균-18.53",
+    "title": "hw2",
+    "section": "결론: toyota의 cty 평균이 더 높다. audi의 cty 평균: 17.61, toyota의 cty 평균: 18.53",
+    "text": "결론: toyota의 cty 평균이 더 높다. audi의 cty 평균: 17.61, toyota의 cty 평균: 18.53"
   }
 ]
