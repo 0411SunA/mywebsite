@@ -1,13 +1,23 @@
 ---
 title: "testwebsite"
 jupyter: python3
+toc: false
+about: 
+    id: hero-heading
+    template: jolla
+    image: 20230824504197.jpg
+links:
+     
+    - icon: github
+    - tect: Github
+    - href: https://github.com/
 ---
 
 ## 홈페이지 첫 화면입니다.!
 
 안녕하세요. *백선아*입니다.
 
-**하이하이**
-*반가워요*
+**반갑습니다**
+*:)*
 
 
