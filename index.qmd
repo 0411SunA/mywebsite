@@ -10,7 +10,7 @@ links:
      
     - icon: github
     - text: Github
-    - href: https://github.com/
+    - href: https://github.com/0411SunA/mywebsite
 ---
 
 ## 홈페이지 첫 화면입니다.!
