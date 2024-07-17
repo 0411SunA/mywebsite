@@ -9,7 +9,7 @@ about:
 links:
      
     - icon: github
-    - tect: Github
+    - text: Github
     - href: https://github.com/
 ---
 
