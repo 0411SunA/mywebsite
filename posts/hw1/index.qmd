@@ -1,5 +1,8 @@
 ---
-title: "hw1"
+title: "LS 빅데이터 스쿨 homework 1"
+author: "백선아"
+date: "2024-07-12"
+categories: [bogdata]
 jupyter: python3
 ---
 
@@ -31,7 +34,7 @@ df["판매량"].mean()
 
 ```{python}
 # p.115
-mpg = pd.read_csv('data/mpg.csv')
+mpg = pd.read_csv('C:/Users/USER/Documents/project/data/mpg.csv')
 mpg
 
 mpg_new = mpg.copy()
@@ -55,7 +58,7 @@ mpg_new.head()
 
 ```{python}
 import pandas as pd
-midwest = pd.read_csv('C:/Users/USER/Documents/LS빅데이터스쿨/Doit_Python/Data/midwest.csv')
+midwest = pd.read_csv('C:/Users/USER/Documents/LS빅데이터스쿨/mywebsite/data/midwest.csv')
 midwest.head()
 midwest.tail()
 midwest.shape
@@ -66,12 +69,13 @@ midwest.describe()
 ## Q2. poptotal(전체 인구) 변수를 total로, popasian(아시아 인구) 변수를 asian으로 수정하세요.
 ```{python}
 midwest = midwest.rename(columns = {'poptotal' : 'total', 'popasian' : 'asian'})
+midwest
 midwest.info()
 ```
 
 ## Q3. total, asian 변수를 이용해 '전체 인구 대비 아시아 인구 백분율' 파생변수를 추가해 히스토그램을 만들어 분포를 살펴보세요.
 ```{python}
-midwest['asia_r'] = (midwest['asian'] / midwest['total'])
+midwest['asia_r'] = ((midwest['asian'] / midwest['total'])*100)
 midwest['asia_r'].plot.hist()
 ```
 
