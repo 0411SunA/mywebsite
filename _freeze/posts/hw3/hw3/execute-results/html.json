@@ -1,0 +1,12 @@
+{
+  "hash": "cd048d43a3b184545e5cdd6286351a24",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: LS 빅데이터 스쿨 homework 1\nauthor: 백선아\ndate: '2024-07-12'\ncategories:\n  - bogdata\n---\n\n",
+    "supporting": [
+      "hw3_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
