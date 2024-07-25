@@ -245,7 +245,7 @@ window.Quarto = {
 <p><span class="math display">\[
 f(x ; \mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2} \left(\frac{x - \mu}{\sigma}\right)^2}
 \]</span></p>
-<div id="6ef21e72" class="cell" data-execution_count="1">
+<div id="22110413" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
@@ -253,7 +253,7 @@ f(x ; \mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2} \left(\frac{x 
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pdf_1(x, mu, std):</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="dv">1</span> <span class="op">/</span> (std <span class="op">*</span> math.sqrt(<span class="dv">2</span> <span class="op">*</span> math.pi))) <span class="op">*</span> math.exp(<span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> ((x <span class="op">-</span> mu) <span class="op">/</span> std) <span class="op">**</span> <span class="dv">2</span>)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>x_values <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">100</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>x_values <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">6</span>, <span class="dv">12</span>, <span class="dv">1000</span>)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>pdf_values <span class="op">=</span> [pdf_1(x, <span class="dv">3</span>, <span class="dv">2</span>) <span class="cf">for</span> x <span class="kw">in</span> x_values]</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>plt.plot(x_values, pdf_values)</span>
@@ -262,7 +262,7 @@ f(x ; \mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2} \left(\frac{x 
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-2-output-1.png" width="579" height="411" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-2-output-1.png" width="592" height="411" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -288,7 +288,7 @@ f(x ; \mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2} \left(\frac{x 
 </section>
 <section id="px-3-or-x-7" class="level1">
 <h1>3) P(X &lt; 3 or X &gt; 7)</h1>
-<div id="22202fa8" class="cell" data-execution_count="2">
+<div id="b589bb68" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) P(X &lt; 3)</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> norm</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>norm.cdf(<span class="dv">3</span>, loc<span class="op">=</span><span class="dv">2</span>, scale<span class="op">=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -296,14 +296,14 @@ f(x ; \mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2} \left(\frac{x 
 <pre><code>np.float64(0.6305586598182363)</code></pre>
 </div>
 </div>
-<div id="c0276ffc" class="cell" data-execution_count="3">
+<div id="1cd2ae40" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) P(2 &lt; X &lt; 5)</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>norm.cdf(<span class="dv">5</span>, loc<span class="op">=</span><span class="dv">2</span>, scale<span class="op">=</span><span class="dv">3</span>) <span class="op">-</span> norm.cdf(<span class="dv">2</span>, loc<span class="op">=</span><span class="dv">2</span>, scale<span class="op">=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>np.float64(0.3413447460685429)</code></pre>
 </div>
 </div>
-<div id="78939009" class="cell" data-execution_count="4">
+<div id="bed7d58c" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) P(X &lt; 3 or X &gt; 7)</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="op">-</span> norm.cdf(<span class="dv">7</span>, loc<span class="op">=</span><span class="dv">2</span>, scale<span class="op">=</span><span class="dv">3</span>) <span class="op">+</span> norm.cdf(<span class="dv">3</span>, loc<span class="op">=</span><span class="dv">2</span>, scale<span class="op">=</span><span class="dv">3</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -319,7 +319,7 @@ f(x ; \mu, \sigma) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2} \left(\frac{x 
 </section>
 <section id="상위-5에-해당하는-학생의-점수는" class="level1">
 <h1>상위 5%에 해당하는 학생의 점수는?</h1>
-<div id="d171e590" class="cell" data-execution_count="5">
+<div id="3aeb6b7f" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.stats <span class="im">as</span> stats</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>mu <span class="op">=</span> <span class="dv">30</span></span>
