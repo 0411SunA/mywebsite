@@ -165,7 +165,7 @@
     "href": "blog.html",
     "title": "myblog",
     "section": "",
-    "text": "교과서 챕터 8\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 Homework 2\n\n\n\n\n\n\nbogdata\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 homework 1\n\n\n\n\n\n\nbogdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 homework 3\n\n\n\n\n\n\nbogdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n백선아\n\n\n\n\n\n\nNo matching items"
+    "text": "LS 빅데이터 스쿨 homework 3.\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\n교과서 챕터 8\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 Homework 2\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 homework 3\n\n\n\n\n\n\nbogdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 homework 1\n\n\n\n\n\n\nbogdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n백선아\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/hw2/index.html#결론-displ이-4-이상인-자동차의-hwy-평균이-25.96으로-displ-5-이상인-자동의-hwy-평균18.08보다-높다.",
@@ -275,9 +275,9 @@
   {
     "objectID": "posts/hw3/index.html",
     "href": "posts/hw3/index.html",
-    "title": "LS 빅데이터 스쿨 homework 3",
+    "title": "LS 빅데이터 스쿨 homework 3.",
     "section": "",
-    "text": "import pandas as pd\nimport seaborn as sns\nmpg = pd.read_csv('C:/Users/USER/Documents/project/data/mpg.csv')\nmpg\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\nclass\n\n\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n\n\n4\naudi\na4\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\ncompact\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n229\nvolkswagen\npassat\n2.0\n2008\n4\nauto(s6)\nf\n19\n28\np\nmidsize\n\n\n230\nvolkswagen\npassat\n2.0\n2008\n4\nmanual(m6)\nf\n21\n29\np\nmidsize\n\n\n231\nvolkswagen\npassat\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\nmidsize\n\n\n232\nvolkswagen\npassat\n2.8\n1999\n6\nmanual(m5)\nf\n18\n26\np\nmidsize\n\n\n233\nvolkswagen\npassat\n3.6\n2008\n6\nauto(s6)\nf\n17\n26\np\nmidsize\n\n\n\n\n234 rows × 11 columns"
+    "text": "1. 정규분포 pdf 값을 계산하는 자신만의\n\n\n파이썬 함수를 정의하고,\n\n\n정규분포 mu = 3, sigma = 2 의 pdf를 그릴 것.\n\\[\nf(x ; \\mu, \\sigma) = \\frac{1}{\\sigma \\sqrt{2\\pi}} e^{-\\frac{1}{2} \\left(\\frac{x - \\mu}{\\sigma}\\right)^2}\n\\]\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport math\n\ndef pdf_1(x, mu, std):\n    return (1 / (std * math.sqrt(2 * math.pi))) * math.exp(-0.5 * ((x - mu) / std) ** 2)\n\nx_values = np.linspace(0, 6, 100)\npdf_values = [pdf_1(x, 3, 2) for x in x_values]\n\nplt.plot(x_values, pdf_values)\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n\n\n2. 파이썬 scipy 패키지 사용해서 다음과 같은\n\n\n확률을 구하시오.\n\n\nX ~ N(2, 3^2)\n\n\n1) P(X &lt; 3)\n\n\n2) P(2 &lt; X &lt; 5)\n\n\n3) P(X &lt; 3 or X &gt; 7)\n\n# 1) P(X &lt; 3)\nfrom scipy.stats import norm\nnorm.cdf(3, loc=2, scale=3)\n\nnp.float64(0.6305586598182363)\n\n\n\n# 2) P(2 &lt; X &lt; 5)\nnorm.cdf(5, loc=2, scale=3) - norm.cdf(2, loc=2, scale=3)\n\nnp.float64(0.3413447460685429)\n\n\n\n# 3) P(X &lt; 3 or X &gt; 7)\n1 - norm.cdf(7, loc=2, scale=3) + norm.cdf(3, loc=2, scale=3) \n\nnp.float64(0.678349012091051)\n\n\n\n\n3. LS 빅데이터 스쿨 학생들의 중간고사 점수는\n\n\n평균이 30이고, 분산이 4인 정규분포를 따른다.\n\n\n상위 5%에 해당하는 학생의 점수는?\n\nimport scipy.stats as stats\n\nmu = 30\nsigma = 2\n\ntop = stats.norm.ppf(0.95)\nscore = mu + top * sigma\nscore\n\nnp.float64(33.28970725390295)"
   },
   {
     "objectID": "posts/hw3/index.html#p204.-mpg-데이터와-midwest-데이터를-이용해-분석-문제를-해결해-보세요.",
@@ -310,6 +310,62 @@
   {
     "objectID": "posts/hw3/index.html#어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시-연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요.",
     "href": "posts/hw3/index.html#어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시-연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요.",
+    "title": "LS 빅데이터 스쿨 homework 3",
+    "section": "1. 어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.",
+    "text": "1. 어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.\n\nmpg = pd.read_csv('C:/Users/USER/Documents/LS빅데이터스쿨/mywebsite/data/mpg.csv')\ndf = mpg.query('category == \"suv\"')\\\n        .groupby('manufacturer', as_index = False) \\\n        .agg(mean_cty = ('cty', 'mean')) \\\n        .sort_values('mean_cty', ascending = False) \\\n        .head()\ndf            \n\n\n\n\n\n\n\n\nmanufacturer\nmean_cty\n\n\n\n\n8\nsubaru\n18.833333\n\n\n9\ntoyota\n14.375000\n\n\n7\nnissan\n13.750000\n\n\n3\njeep\n13.500000\n\n\n6\nmercury\n13.250000\n\n\n\n\n\n\n\n\nsns.barplot(data = df, x = 'manufacturer', y = 'mean_cty')\n\n\n\n\n\n\n\n\n##2. 자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.\n\ndf_mpg = mpg.groupby('category', as_index = False) \\\n            .agg(n = ('category', 'count')) \\\n            .sort_values('n', ascending = False)\n\n\nsns.barplot(data = df_mpg, x = 'category', y = 'n')"
+  },
+  {
+    "objectID": "posts/hw3/index.html#정규분포-pdf-값을-계산하는-자신만의-파이썬-함수를-정의하고",
+    "href": "posts/hw3/index.html#정규분포-pdf-값을-계산하는-자신만의-파이썬-함수를-정의하고",
+    "title": "LS 빅데이터 스쿨 homework 3.",
+    "section": "",
+    "text": "정규분포 mu = 3, sigma = 2의 pdf를 그릴 것."
+  },
+  {
+    "objectID": "posts/hw3/index.html#파이썬-scipy-패키지-사용해서-다음과-같은",
+    "href": "posts/hw3/index.html#파이썬-scipy-패키지-사용해서-다음과-같은",
+    "title": "LS 빅데이터 스쿨 homework 3.",
+    "section": "2. 파이썬 scipy 패키지 사용해서 다음과 같은",
+    "text": "2. 파이썬 scipy 패키지 사용해서 다음과 같은\n확률을 구하시오\nX ~ N(2, 3^2)\n\nP(X &lt; 3)\nP(2 &lt; X &lt; 5)\nP(X &lt; 3 or X &gt; 7)"
+  },
+  {
+    "objectID": "posts/homework3/index.html",
+    "href": "posts/homework3/index.html",
+    "title": "LS 빅데이터 스쿨 homework 3",
+    "section": "",
+    "text": "import pandas as pd\nimport seaborn as sns\nmpg = pd.read_csv('C:/Users/USER/Documents/project/data/mpg.csv')\nmpg\n\n\n\n\n\n\n\n\nmanufacturer\nmodel\ndispl\nyear\ncyl\ntrans\ndrv\ncty\nhwy\nfl\nclass\n\n\n\n\n0\naudi\na4\n1.8\n1999\n4\nauto(l5)\nf\n18\n29\np\ncompact\n\n\n1\naudi\na4\n1.8\n1999\n4\nmanual(m5)\nf\n21\n29\np\ncompact\n\n\n2\naudi\na4\n2.0\n2008\n4\nmanual(m6)\nf\n20\n31\np\ncompact\n\n\n3\naudi\na4\n2.0\n2008\n4\nauto(av)\nf\n21\n30\np\ncompact\n\n\n4\naudi\na4\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\ncompact\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n229\nvolkswagen\npassat\n2.0\n2008\n4\nauto(s6)\nf\n19\n28\np\nmidsize\n\n\n230\nvolkswagen\npassat\n2.0\n2008\n4\nmanual(m6)\nf\n21\n29\np\nmidsize\n\n\n231\nvolkswagen\npassat\n2.8\n1999\n6\nauto(l5)\nf\n16\n26\np\nmidsize\n\n\n232\nvolkswagen\npassat\n2.8\n1999\n6\nmanual(m5)\nf\n18\n26\np\nmidsize\n\n\n233\nvolkswagen\npassat\n3.6\n2008\n6\nauto(s6)\nf\n17\n26\np\nmidsize\n\n\n\n\n234 rows × 11 columns"
+  },
+  {
+    "objectID": "posts/homework3/index.html#p204.-mpg-데이터와-midwest-데이터를-이용해-분석-문제를-해결해-보세요.",
+    "href": "posts/homework3/index.html#p204.-mpg-데이터와-midwest-데이터를-이용해-분석-문제를-해결해-보세요.",
+    "title": "LS 빅데이터 스쿨 homework 3",
+    "section": "p204. mpg 데이터와 midwest 데이터를 이용해 분석 문제를 해결해 보세요.",
+    "text": "p204. mpg 데이터와 midwest 데이터를 이용해 분석 문제를 해결해 보세요."
+  },
+  {
+    "objectID": "posts/homework3/index.html#mpg-데이터의-cty와-hwy-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어-보세요.",
+    "href": "posts/homework3/index.html#mpg-데이터의-cty와-hwy-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-cty-y축은-hwy로-된-산점도를-만들어-보세요.",
+    "title": "LS 빅데이터 스쿨 homework 3",
+    "section": "1. mpg 데이터의 cty와 hwy 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 cty, y축은 hwy로 된 산점도를 만들어 보세요.",
+    "text": "1. mpg 데이터의 cty와 hwy 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 cty, y축은 hwy로 된 산점도를 만들어 보세요.\n\nsns.scatterplot(data = mpg, x = 'cty', y = 'hwy')"
+  },
+  {
+    "objectID": "posts/homework3/index.html#미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체-인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요.",
+    "href": "posts/homework3/index.html#미국의-지역별-인구통계-정보를-담은-midwest.csv를-이용해-전체-인구와-아시아인-인구-간에-어떤-관계가-있는지-알아보려고-합니다.-x축은-poptotal전체-인구-y축은-popasian아시아인-인구으로-된-산점도를-만들어-보세요.-전체-인구는-50만-명-이하-아시아인-인구는-1만-명-이하인-지역만-산점도에-표시되게-설정하세요.",
+    "title": "LS 빅데이터 스쿨 homework 3",
+    "section": "2. 미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체 인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.",
+    "text": "2. 미국의 지역별 인구통계 정보를 담은 midwest.csv를 이용해 전체 인구와 아시아인 인구 간에 어떤 관계가 있는지 알아보려고 합니다. x축은 poptotal(전체 인구), y축은 popasian(아시아인 인구)으로 된 산점도를 만들어 보세요. 전체 인구는 50만 명 이하, 아시아인 인구는 1만 명 이하인 지역만 산점도에 표시되게 설정하세요.\n\nmidwest = pd.read_csv('C:/Users/USER/Documents/LS빅데이터스쿨/mywebsite/data/midwest.csv')\nmidwest\n\n\n\n\n\n\n\n\nPID\ncounty\nstate\narea\npoptotal\npopdensity\npopwhite\npopblack\npopamerindian\npopasian\n...\npercollege\npercprof\npoppovertyknown\npercpovertyknown\npercbelowpoverty\npercchildbelowpovert\npercadultpoverty\npercelderlypoverty\ninmetro\ncategory\n\n\n\n\n0\n561\nADAMS\nIL\n0.052\n66090\n1270.961540\n63917\n1702\n98\n249\n...\n19.631392\n4.355859\n63628\n96.274777\n13.151443\n18.011717\n11.009776\n12.443812\n0\nAAR\n\n\n1\n562\nALEXANDER\nIL\n0.014\n10626\n759.000000\n7054\n3496\n19\n48\n...\n11.243308\n2.870315\n10529\n99.087145\n32.244278\n45.826514\n27.385647\n25.228976\n0\nLHR\n\n\n2\n563\nBOND\nIL\n0.022\n14991\n681.409091\n14477\n429\n35\n16\n...\n17.033819\n4.488572\n14235\n94.956974\n12.068844\n14.036061\n10.852090\n12.697410\n0\nAAR\n\n\n3\n564\nBOONE\nIL\n0.017\n30806\n1812.117650\n29344\n127\n46\n150\n...\n17.278954\n4.197800\n30337\n98.477569\n7.209019\n11.179536\n5.536013\n6.217047\n1\nALU\n\n\n4\n565\nBROWN\nIL\n0.018\n5836\n324.222222\n5264\n547\n14\n5\n...\n14.475999\n3.367680\n4815\n82.505140\n13.520249\n13.022889\n11.143211\n19.200000\n0\nAAR\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n432\n3048\nWAUKESHA\nWI\n0.034\n304715\n8962.205880\n298313\n1096\n672\n2699\n...\n35.396784\n7.667090\n299802\n98.387674\n3.121060\n3.785820\n2.590061\n4.085479\n1\nHLU\n\n\n433\n3049\nWAUPACA\nWI\n0.045\n46104\n1024.533330\n45695\n22\n125\n92\n...\n16.549869\n3.138596\n44412\n96.330036\n8.488697\n10.071411\n6.953799\n10.338641\n0\nAAR\n\n\n434\n3050\nWAUSHARA\nWI\n0.037\n19385\n523.918919\n19094\n29\n70\n43\n...\n15.064584\n2.620907\n19163\n98.854785\n13.786985\n20.050708\n11.695784\n11.804558\n0\nAAR\n\n\n435\n3051\nWINNEBAGO\nWI\n0.035\n140320\n4009.142860\n136822\n697\n685\n1728\n...\n24.995504\n5.659847\n133950\n95.460376\n8.804031\n10.592031\n8.660587\n6.661094\n1\nHAU\n\n\n436\n3052\nWOOD\nWI\n0.048\n73605\n1533.437500\n72157\n90\n481\n722\n...\n21.666382\n4.583725\n72685\n98.750085\n8.525831\n11.162997\n7.375656\n7.882918\n0\nAAR\n\n\n\n\n437 rows × 28 columns\n\n\n\n\nsns.scatterplot(data = midwest, x = 'poptotal', y = 'popasian') \\\n   .set(xlim = [0,500000], ylim= [0, 10000])"
+  },
+  {
+    "objectID": "posts/homework3/index.html#p.-211",
+    "href": "posts/homework3/index.html#p.-211",
+    "title": "LS 빅데이터 스쿨 homework 3",
+    "section": "p. 211",
+    "text": "p. 211"
+  },
+  {
+    "objectID": "posts/homework3/index.html#어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시-연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요.",
+    "href": "posts/homework3/index.html#어떤-회사에서-생산한-suv-차종의-도시-연비가-높은지-알아보려고-합니다.-suv-차종을-대상으로-cty도시-연비-평균이-가장-높은-회사-다섯-곳을-막대-그래프로-표현해-보세요.-막대는-연비가-높은-순으로-정렬하세요.",
     "title": "LS 빅데이터 스쿨 homework 3",
     "section": "1. 어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.",
     "text": "1. 어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.\n\nmpg = pd.read_csv('C:/Users/USER/Documents/LS빅데이터스쿨/mywebsite/data/mpg.csv')\ndf = mpg.query('category == \"suv\"')\\\n        .groupby('manufacturer', as_index = False) \\\n        .agg(mean_cty = ('cty', 'mean')) \\\n        .sort_values('mean_cty', ascending = False) \\\n        .head()\ndf            \n\n\n\n\n\n\n\n\nmanufacturer\nmean_cty\n\n\n\n\n8\nsubaru\n18.833333\n\n\n9\ntoyota\n14.375000\n\n\n7\nnissan\n13.750000\n\n\n3\njeep\n13.500000\n\n\n6\nmercury\n13.250000\n\n\n\n\n\n\n\n\nsns.barplot(data = df, x = 'manufacturer', y = 'mean_cty')\n\n\n\n\n\n\n\n\n##2. 자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.\n\ndf_mpg = mpg.groupby('category', as_index = False) \\\n            .agg(n = ('category', 'count')) \\\n            .sort_values('n', ascending = False)\n\n\nsns.barplot(data = df_mpg, x = 'category', y = 'n')"

@@ -2,7 +2,7 @@
 title: "LS 빅데이터 스쿨 Homework 2"
 author: "백선아"
 date: "2024-07-16"
-categories: [bogdata]
+categories: [bigdata]
 jupyter: python3
 ---
 # p.144 
