@@ -387,15 +387,29 @@
   {
     "objectID": "posts/hw4/hw4.html",
     "href": "posts/hw4/hw4.html",
-    "title": "균일분포 (3, 7)에서 20개의 표본을 뽑아서 분산을 2가지 방법으로 추정해보세요.",
+    "title": "LS 빅데이터 스쿨 homework 4",
     "section": "",
-    "text": "from scipy.stats import uniform\nimport numpy as np\nimport matplotlib.pyplot as plt\nuniform.rvs(loc=3, scale=4, size=20)\n\narray([5.1695378 , 5.97958693, 6.31924647, 6.19828884, 6.03461736,\n       3.6430643 , 3.06087978, 5.62819417, 4.05345241, 5.78276128,\n       3.85488874, 6.45199025, 6.94513215, 4.33259034, 3.65310045,\n       4.73383619, 5.24985194, 6.50450809, 5.59350833, 5.7173107 ])"
+    "text": "# s_2 분포\nfrom scipy.stats import uniform\nimport matplotlib.pyplot as plt\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx = x.reshape(-1,20)\nx.shape\n\ns_2 = x.var(axis=1, ddof=1)\ns_2\n\n# 히스토그램 그리기\nimport seaborn as sns\nfrom scipy.stats import norm\nsns.histplot(s_2, stat=\"density\", color = \"orange\")\nplt.axvline(x.var(), color=\"green\", linewidth = 2)\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n\n# k_2 분포\nfrom scipy.stats import uniform\nimport matplotlib.pyplot as plt\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx = x.reshape(-1,20)\nx.shape\n\nk_2 = x.var(axis=1, ddof=0)\nk_2\n\n# 히스토그램 그리기\nimport seaborn as sns\nfrom scipy.stats import norm\nsns.histplot(k_2, stat=\"density\", color = \"orange\")\nplt.axvline(x.var(), color=\"green\",  linewidth = 2)\nplt.show()"
   },
   {
     "objectID": "posts/hw4/hw4.html#n-1로-나눈-것을-s_2-n으로-나눈-것을-k_2로-정의하고-s_2의-분포와-k_2의-분포를-그려주세요-10000개-사용",
     "href": "posts/hw4/hw4.html#n-1로-나눈-것을-s_2-n으로-나눈-것을-k_2로-정의하고-s_2의-분포와-k_2의-분포를-그려주세요-10000개-사용",
-    "title": "균일분포 (3, 7)에서 20개의 표본을 뽑아서 분산을 2가지 방법으로 추정해보세요.",
+    "title": "LS 빅데이터 스쿨 homework 4",
+    "section": "1. n-1로 나눈 것을 s_2, n으로 나눈 것을 k_2로 정의하고, s_2의 분포와 k_2의 분포를 그려주세요! (10000개 사용)",
+    "text": "1. n-1로 나눈 것을 s_2, n으로 나눈 것을 k_2로 정의하고, s_2의 분포와 k_2의 분포를 그려주세요! (10000개 사용)"
+  },
+  {
+    "objectID": "posts/hw4/hw4.html#분포-그래프에-모분산의-위치에-녹색-막대를-그려주세요.",
+    "href": "posts/hw4/hw4.html#분포-그래프에-모분산의-위치에-녹색-막대를-그려주세요.",
+    "title": "LS 빅데이터 스쿨 homework 4",
+    "section": "2. 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요.",
+    "text": "2. 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요.\n\n# s_2 분포\nfrom scipy.stats import uniform\nimport matplotlib.pyplot as plt\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx = x.reshape(-1,20)\nx.shape\n\ns_2 = x.var(axis=1, ddof=1)\ns_2\n\n# 히스토그램 그리기\nimport seaborn as sns\nfrom scipy.stats import norm\nsns.histplot(s_2, stat=\"density\", color = \"orange\")\nplt.axvline(x.var(), color=\"green\", linewidth = 2)\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n\n# k_2 분포\nfrom scipy.stats import uniform\nimport matplotlib.pyplot as plt\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx = x.reshape(-1,20)\nx.shape\n\nk_2 = x.var(axis=1, ddof=0)\nk_2\n\n# 히스토그램 그리기\nimport seaborn as sns\nfrom scipy.stats import norm\nsns.histplot(k_2, stat=\"density\", color = \"orange\")\nplt.axvline(x.var(), color=\"green\",  linewidth = 2)\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw4/hw4.html#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.",
+    "href": "posts/hw4/hw4.html#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.",
+    "title": "LS 빅데이터 스쿨 homework 4",
     "section": "",
-    "text": "from scipy.stats import uniform\nimport numpy as np\nimport matplotlib.pyplot as plt\nuniform.rvs(loc=3, scale=4, size=20)\n\narray([5.1695378 , 5.97958693, 6.31924647, 6.19828884, 6.03461736,\n       3.6430643 , 3.06087978, 5.62819417, 4.05345241, 5.78276128,\n       3.85488874, 6.45199025, 6.94513215, 4.33259034, 3.65310045,\n       4.73383619, 5.24985194, 6.50450809, 5.59350833, 5.7173107 ])"
+    "text": "# s_2 분포\nfrom scipy.stats import uniform\nimport matplotlib.pyplot as plt\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx = x.reshape(-1,20)\nx.shape\n\ns_2 = x.var(axis=1, ddof=1)\ns_2\n\n# 히스토그램 그리기\nimport seaborn as sns\nfrom scipy.stats import norm\nsns.histplot(s_2, stat=\"density\", color = \"orange\")\nplt.axvline(x.var(), color=\"green\", linewidth = 2)\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n\n# k_2 분포\nfrom scipy.stats import uniform\nimport matplotlib.pyplot as plt\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx = x.reshape(-1,20)\nx.shape\n\nk_2 = x.var(axis=1, ddof=0)\nk_2\n\n# 히스토그램 그리기\nimport seaborn as sns\nfrom scipy.stats import norm\nsns.histplot(k_2, stat=\"density\", color = \"orange\")\nplt.axvline(x.var(), color=\"green\",  linewidth = 2)\nplt.show()"
   }
 ]

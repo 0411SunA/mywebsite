@@ -202,7 +202,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="bigdata" data-listing-date-sort="1722178800000" data-listing-file-modified-sort="1722255043204" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="148">
+<div class="quarto-post image-right" data-index="0" data-categories="bigdata" data-listing-date-sort="1722178800000" data-listing-file-modified-sort="1722255197214" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="148">
 <div class="thumbnail">
 <p><a href="./posts/hw4/hw4.html" class="no-external"></a></p><a href="./posts/hw4/hw4.html" class="no-external">
 <p class="card-img-top"><img src="posts\hw4\hw4_files\figure-html\cell-2-output-1.png"  class="thumbnail-image card-img"/></p>
@@ -223,7 +223,21 @@ bigdata
 <div class="listing-description">
 <a href="./posts/hw4/hw4.html" class="no-external">
 
-</a>
+<section id="n-1로-나눈-것을-s_2-n으로-나눈-것을-k_2로-정의하고-s_2의-분포와-k_2의-분포를-그려주세요-10000개-사용" class="level3">
+
+</section>
+<section id="분포-그래프에-모분산의-위치에-녹색-막대를-그려주세요." class="level3">
+
+<div id="6de152ee" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="co"># s_2 분포</span></span>
+<span id="cb1-2"><span class="im">from</span> scipy.stats <span class="im">import</span> uniform</span>
+<span id="cb1-3"><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"></span>
+<span id="cb1-5">x <span class="op">=</span> uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>, size<span class="op">=</span><span class="dv">20</span><span class="op">*</span><span class="dv">10000</span>)</span>
+<span id="cb1-6">x <span class="op">=</span> x.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
+<span id="cb1-7">x.shape</span>
+<span id="cb1-8"></span>
+<span id="cb1-9">s_2 <span class="op">=</span> x.var(axis<span class="op">…</span><span class="dv"></span><span class="op"></span><span class="dv"></span></span><span id="cb1-10"></span><span id="cb1-11"></span><span id="cb1-12"><span class="co"></span></span><span id="cb1-13"><span class="im"></span><span class="im"></span></span><span id="cb1-14"><span class="im"></span><span class="im"></span></span><span id="cb1-15"><span class="op"></span><span class="st"></span><span class="op"></span><span class="st"></span></span><span id="cb1-16"><span class="op"></span><span class="st"></span><span class="op"></span><span class="dv"></span></span><span id="cb1-17"></span><span id="cb1-18"></span></code></pre></div><div class="cell-output cell-output-display"><div><figure class="figure"><p></p></figure></div></div><div class="cell-output cell-output-display"><pre><code></code></pre></div></div><div id="df5155c7" class="cell" data-execution_count="2"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="co"></span></span><span id="cb3-2"><span class="im"></span><span class="im"></span></span><span id="cb3-3"><span class="im"></span><span class="im"></span></span><span id="cb3-4"></span><span id="cb3-5"><span class="op"></span><span class="op"></span><span class="dv"></span><span class="op"></span><span class="dv"></span><span class="op"></span><span class="dv"></span><span class="op"></span><span class="dv"></span></span><span id="cb3-6"><span class="op"></span><span class="op"></span><span class="dv"></span><span class="dv"></span></span><span id="cb3-7"></span><span id="cb3-8"></span><span id="cb3-9"><span class="op"></span><span class="op"></span><span class="dv"></span><span class="op"></span><span class="dv"></span></span><span id="cb3-10"></span><span id="cb3-11"></span><span id="cb3-12"><span class="co"></span></span><span id="cb3-13"><span class="im"></span><span class="im"></span></span><span id="cb3-14"><span class="im"></span><span class="im"></span></span><span id="cb3-15"><span class="op"></span><span class="st"></span><span class="op"></span><span class="st"></span></span><span id="cb3-16"><span class="op"></span><span class="st"></span><span class="op"></span><span class="dv"></span></span><span id="cb3-17"></span></code></pre></div><div class="cell-output cell-output-display"><div><figure class="figure"><p></p></figure></div></div></div></section></a>
 </div>
 </div>
 <div class="metadata">
