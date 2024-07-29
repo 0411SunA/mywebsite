@@ -165,7 +165,7 @@
     "href": "blog.html",
     "title": "myblog",
     "section": "",
-    "text": "LS 빅데이터 스쿨 homework 3.\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\n교과서 챕터 8\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 Homework 2\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 homework 3\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 homework 1\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n백선아\n\n\n\n\n\n\nNo matching items"
+    "text": "LS 빅데이터 스쿨 homework 4\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 homework 3.\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\n교과서 챕터 8\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 Homework 2\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 homework 3\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 homework 1\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n백선아\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/hw2/index.html#결론-displ이-4-이상인-자동차의-hwy-평균이-25.96으로-displ-5-이상인-자동의-hwy-평균18.08보다-높다.",
@@ -369,5 +369,33 @@
     "title": "LS 빅데이터 스쿨 homework 3",
     "section": "1. 어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.",
     "text": "1. 어떤 회사에서 생산한 ‘suv’ 차종의 도시 연비가 높은지 알아보려고 합니다. ‘suv’ 차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.\n\nmpg = pd.read_csv('C:/Users/USER/Documents/LS빅데이터스쿨/mywebsite/data/mpg.csv')\ndf = mpg.query('category == \"suv\"')\\\n        .groupby('manufacturer', as_index = False) \\\n        .agg(mean_cty = ('cty', 'mean')) \\\n        .sort_values('mean_cty', ascending = False) \\\n        .head()\ndf            \n\n\n\n\n\n\n\n\nmanufacturer\nmean_cty\n\n\n\n\n8\nsubaru\n18.833333\n\n\n9\ntoyota\n14.375000\n\n\n7\nnissan\n13.750000\n\n\n3\njeep\n13.500000\n\n\n6\nmercury\n13.250000\n\n\n\n\n\n\n\n\nsns.barplot(data = df, x = 'manufacturer', y = 'mean_cty')\n\n\n\n\n\n\n\n\n##2. 자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.\n\ndf_mpg = mpg.groupby('category', as_index = False) \\\n            .agg(n = ('category', 'count')) \\\n            .sort_values('n', ascending = False)\n\n\nsns.barplot(data = df_mpg, x = 'category', y = 'n')"
+  },
+  {
+    "objectID": "posts/hw4/hw4.html#각-분포-그래프에-모분산의-위치에-녹색-막대를-그려주세요.",
+    "href": "posts/hw4/hw4.html#각-분포-그래프에-모분산의-위치에-녹색-막대를-그려주세요.",
+    "title": "LS 빅데이터 스쿨 homework 4",
+    "section": "2. 각 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요.",
+    "text": "2. 각 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요."
+  },
+  {
+    "objectID": "posts/hw4/hw4.html#결과를-살펴보고-왜-n-1로-나눈-것을-분산을-추정하는-지표로-사용하는-것이-타당한지-써주세요",
+    "href": "posts/hw4/hw4.html#결과를-살펴보고-왜-n-1로-나눈-것을-분산을-추정하는-지표로-사용하는-것이-타당한지-써주세요",
+    "title": "LS 빅데이터 스쿨 homework 4",
+    "section": "3. 결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지 써주세요!",
+    "text": "3. 결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지 써주세요!\n\n답변: 표본 분산 계산에서 n-1로 나눈 분포는 모분산인 1.33을 기준으로 좌우로 대칭인 모양을 띄는 반면 n으로 나눈 분포의 경우 모분산을 기준으로 좌우 대칭이지 않고 왼쪽으로 값이 쏠린 모양이기 때문에 모분산에 더 가까운 형태를 띄는 n-1로 나눈 것을 분산을 추정하는 지표로 사용한다고 생각한다."
+  },
+  {
+    "objectID": "posts/hw4/hw4.html",
+    "href": "posts/hw4/hw4.html",
+    "title": "균일분포 (3, 7)에서 20개의 표본을 뽑아서 분산을 2가지 방법으로 추정해보세요.",
+    "section": "",
+    "text": "from scipy.stats import uniform\nimport numpy as np\nimport matplotlib.pyplot as plt\nuniform.rvs(loc=3, scale=4, size=20)\n\narray([5.1695378 , 5.97958693, 6.31924647, 6.19828884, 6.03461736,\n       3.6430643 , 3.06087978, 5.62819417, 4.05345241, 5.78276128,\n       3.85488874, 6.45199025, 6.94513215, 4.33259034, 3.65310045,\n       4.73383619, 5.24985194, 6.50450809, 5.59350833, 5.7173107 ])"
+  },
+  {
+    "objectID": "posts/hw4/hw4.html#n-1로-나눈-것을-s_2-n으로-나눈-것을-k_2로-정의하고-s_2의-분포와-k_2의-분포를-그려주세요-10000개-사용",
+    "href": "posts/hw4/hw4.html#n-1로-나눈-것을-s_2-n으로-나눈-것을-k_2로-정의하고-s_2의-분포와-k_2의-분포를-그려주세요-10000개-사용",
+    "title": "균일분포 (3, 7)에서 20개의 표본을 뽑아서 분산을 2가지 방법으로 추정해보세요.",
+    "section": "",
+    "text": "from scipy.stats import uniform\nimport numpy as np\nimport matplotlib.pyplot as plt\nuniform.rvs(loc=3, scale=4, size=20)\n\narray([5.1695378 , 5.97958693, 6.31924647, 6.19828884, 6.03461736,\n       3.6430643 , 3.06087978, 5.62819417, 4.05345241, 5.78276128,\n       3.85488874, 6.45199025, 6.94513215, 4.33259034, 3.65310045,\n       4.73383619, 5.24985194, 6.50450809, 5.59350833, 5.7173107 ])"
   }
 ]

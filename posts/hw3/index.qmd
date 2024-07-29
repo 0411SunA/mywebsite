@@ -63,6 +63,7 @@ norm.cdf(5, loc=2, scale=3) - norm.cdf(2, loc=2, scale=3)
 # 평균이 30이고, 분산이 4인 정규분포를 따른다.
 
 # 상위 5%에 해당하는 학생의 점수는?
+# 다르게 말해 하위 95%임. 왼쪽부터 계산하기 때문에.
 ```{python}
 import scipy.stats as stats
 
@@ -73,4 +74,5 @@ top = stats.norm.ppf(0.95)
 score = mu + top * sigma
 score
 ```
+
 
