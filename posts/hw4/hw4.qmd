@@ -23,8 +23,9 @@ s_2
 # 히스토그램 그리기
 import seaborn as sns
 from scipy.stats import norm
-sns.histplot(s_2, stat="density", color = "orange")
-plt.axvline(x.var(), color="green", linewidth = 2)
+sns.histplot(s_2, stat="density", color = "green")
+plt.axvline(x.var(), color ="red", linewidth = 2)
+plt.xlim([0, 2.5])
 plt.show()
 plt.clf()
 ```
@@ -43,8 +44,8 @@ k_2
 # 히스토그램 그리기
 import seaborn as sns
 from scipy.stats import norm
-sns.histplot(k_2, stat="density", color = "orange")
-plt.axvline(x.var(), color="green",  linewidth = 2)
+sns.histplot(k_2, stat="density", color = "green")
+plt.axvline(x.var(), color="red",  linewidth = 2)
 plt.show()
 ```
 
