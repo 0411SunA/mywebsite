@@ -165,7 +165,7 @@
     "href": "blog.html",
     "title": "myblog",
     "section": "",
-    "text": "LS 빅데이터 스쿨 homework 4\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 homework 3.\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\n교과서 챕터 8\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 Homework 2\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 homework 3\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 homework 1\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n백선아\n\n\n\n\n\n\nNo matching items"
+    "text": "LS 빅데이터 스쿨 homework 5.\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 31, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 homework 4\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 homework 3.\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\n교과서 챕터 8\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 Homework 2\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 homework 3\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n백선아\n\n\n\n\n\n\n\n\n\n\n\n\nLS 빅데이터 스쿨 homework 1\n\n\n\n\n\n\nbigdata\n\n\n\n\n\n\n\n\n\nJul 12, 2024\n\n\n백선아\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/hw2/index.html#결론-displ이-4-이상인-자동차의-hwy-평균이-25.96으로-displ-5-이상인-자동의-hwy-평균18.08보다-높다.",
@@ -387,15 +387,77 @@
   {
     "objectID": "posts/hw4/hw4.html",
     "href": "posts/hw4/hw4.html",
-    "title": "균일분포 (3, 7)에서 20개의 표본을 뽑아서 분산을 2가지 방법으로 추정해보세요.",
+    "title": "LS 빅데이터 스쿨 homework 4",
     "section": "",
-    "text": "from scipy.stats import uniform\nimport numpy as np\nimport matplotlib.pyplot as plt\nuniform.rvs(loc=3, scale=4, size=20)\n\narray([5.1695378 , 5.97958693, 6.31924647, 6.19828884, 6.03461736,\n       3.6430643 , 3.06087978, 5.62819417, 4.05345241, 5.78276128,\n       3.85488874, 6.45199025, 6.94513215, 4.33259034, 3.65310045,\n       4.73383619, 5.24985194, 6.50450809, 5.59350833, 5.7173107 ])"
+    "text": "# s_2 분포\nfrom scipy.stats import uniform\nimport matplotlib.pyplot as plt\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx = x.reshape(-1,20)\nx.shape\n\ns_2 = x.var(axis=1, ddof=1)\ns_2\n\n# 히스토그램 그리기\nimport seaborn as sns\nfrom scipy.stats import norm\nsns.histplot(s_2, stat=\"density\", color = \"green\")\nplt.axvline(x.var(), color =\"red\", linewidth = 2)\nplt.xlim([0, 2.5])\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n\n# k_2 분포\nfrom scipy.stats import uniform\nimport matplotlib.pyplot as plt\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx = x.reshape(-1,20)\nx.shape\n\nk_2 = x.var(axis=1, ddof=0)\nk_2\n\n# 히스토그램 그리기\nimport seaborn as sns\nfrom scipy.stats import norm\nsns.histplot(k_2, stat=\"density\", color = \"green\")\nplt.axvline(x.var(), color=\"red\",  linewidth = 2)\nplt.show()"
   },
   {
     "objectID": "posts/hw4/hw4.html#n-1로-나눈-것을-s_2-n으로-나눈-것을-k_2로-정의하고-s_2의-분포와-k_2의-분포를-그려주세요-10000개-사용",
     "href": "posts/hw4/hw4.html#n-1로-나눈-것을-s_2-n으로-나눈-것을-k_2로-정의하고-s_2의-분포와-k_2의-분포를-그려주세요-10000개-사용",
-    "title": "균일분포 (3, 7)에서 20개의 표본을 뽑아서 분산을 2가지 방법으로 추정해보세요.",
+    "title": "LS 빅데이터 스쿨 homework 4",
+    "section": "1. n-1로 나눈 것을 s_2, n으로 나눈 것을 k_2로 정의하고, s_2의 분포와 k_2의 분포를 그려주세요! (10000개 사용)",
+    "text": "1. n-1로 나눈 것을 s_2, n으로 나눈 것을 k_2로 정의하고, s_2의 분포와 k_2의 분포를 그려주세요! (10000개 사용)"
+  },
+  {
+    "objectID": "posts/hw4/hw4.html#분포-그래프에-모분산의-위치에-녹색-막대를-그려주세요.",
+    "href": "posts/hw4/hw4.html#분포-그래프에-모분산의-위치에-녹색-막대를-그려주세요.",
+    "title": "LS 빅데이터 스쿨 homework 4",
+    "section": "2. 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요.",
+    "text": "2. 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요.\n\n# s_2 분포\nfrom scipy.stats import uniform\nimport matplotlib.pyplot as plt\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx = x.reshape(-1,20)\nx.shape\n\ns_2 = x.var(axis=1, ddof=1)\ns_2\n\n# 히스토그램 그리기\nimport seaborn as sns\nfrom scipy.stats import norm\nsns.histplot(s_2, stat=\"density\", color = \"orange\")\nplt.axvline(x.var(), color=\"green\", linewidth = 2)\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n\n# k_2 분포\nfrom scipy.stats import uniform\nimport matplotlib.pyplot as plt\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx = x.reshape(-1,20)\nx.shape\n\nk_2 = x.var(axis=1, ddof=0)\nk_2\n\n# 히스토그램 그리기\nimport seaborn as sns\nfrom scipy.stats import norm\nsns.histplot(k_2, stat=\"density\", color = \"orange\")\nplt.axvline(x.var(), color=\"green\",  linewidth = 2)\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw4/hw4.html#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.",
+    "href": "posts/hw4/hw4.html#균일분포-3-7에서-20개의-표본을-뽑아서-분산을-2가지-방법으로-추정해보세요.",
+    "title": "LS 빅데이터 스쿨 homework 4",
     "section": "",
-    "text": "from scipy.stats import uniform\nimport numpy as np\nimport matplotlib.pyplot as plt\nuniform.rvs(loc=3, scale=4, size=20)\n\narray([5.1695378 , 5.97958693, 6.31924647, 6.19828884, 6.03461736,\n       3.6430643 , 3.06087978, 5.62819417, 4.05345241, 5.78276128,\n       3.85488874, 6.45199025, 6.94513215, 4.33259034, 3.65310045,\n       4.73383619, 5.24985194, 6.50450809, 5.59350833, 5.7173107 ])"
+    "text": "# s_2 분포\nfrom scipy.stats import uniform\nimport matplotlib.pyplot as plt\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx = x.reshape(-1,20)\nx.shape\n\ns_2 = x.var(axis=1, ddof=1)\ns_2\n\n# 히스토그램 그리기\nimport seaborn as sns\nfrom scipy.stats import norm\nsns.histplot(s_2, stat=\"density\", color = \"green\")\nplt.axvline(x.var(), color =\"red\", linewidth = 2)\nplt.xlim([0, 2.5])\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n\n# k_2 분포\nfrom scipy.stats import uniform\nimport matplotlib.pyplot as plt\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx = x.reshape(-1,20)\nx.shape\n\nk_2 = x.var(axis=1, ddof=0)\nk_2\n\n# 히스토그램 그리기\nimport seaborn as sns\nfrom scipy.stats import norm\nsns.histplot(k_2, stat=\"density\", color = \"green\")\nplt.axvline(x.var(), color=\"red\",  linewidth = 2)\nplt.show()"
+<<<<<<< HEAD
+<<<<<<< HEAD
+  },
+  {
+    "objectID": "posts/hw5/index.html",
+    "href": "posts/hw5/index.html",
+    "title": "LS 빅데이터 스쿨 homework 5.",
+    "section": "",
+    "text": "# ! pip install pyreadstat\nimport pandas as pd\nimport numpy as np\nimport seaborn as sns\nfrom scipy.stats import norm\nimport matplotlib.pyplot as plt \n\n# 데이터 불러오기 \nraw_welfare = pd.read_spss(\"C:/Users/USER/Documents/LS빅데이터스쿨/mywebsite/data/koweps/Koweps_hpwc14_2019_beta2.sav\")\nraw_welfare\n\n# 복사본 만들기\nwelfare = raw_welfare.copy()\n\nwelfare=welfare.rename(\n    columns = {\n        \"h14_g3\" : \"sex\",\n        \"h14_g4\" : \"birth\",\n        \"h14_g10\" : \"marriage_type\",\n        \"h14_g11\" : \"religion\",\n        \"p1402_8aq1\" : \"income\",\n        \"h14_eco9\" : \"code_job\",\n        \"h14_reg7\" : \"code_region\"\n    }\n)\nwelfare = welfare[[\"sex\", \"birth\", \"marriage_type\",\n                    \"religion\", \"income\", \"code_job\", \"code_region\"]]\n\nwelfare[\"sex\"] = np.where(welfare[\"sex\"] == 1, \n                           \"male\", \"female\")\n\nwelfare[\"sex\"].value_counts()\n\nsex\nfemale    7913\nmale      6505\nName: count, dtype: int64\n\n\n\n\n\n\nsex_income = welfare.dropna(subset=\"income\") \\\n            .groupby(\"sex\", as_index=False) \\\n            .agg(mean_income = (\"income\", \"mean\"),\n             std_income = (\"income\", \"std\"),\n             n = (\"sex\", \"count\"))\nsex_income\n\n\n\n\n\n\n\n\nsex\nmean_income\nstd_income\nn\n\n\n\n\n0\nfemale\n186.293096\n132.057402\n2245\n\n\n1\nmale\n349.037571\n217.862254\n2289\n\n\n\n\n\n\n\n\n\n\n\na = norm.ppf(0.975, sex_income[\"mean_income\"],\n             sex_income[\"std_income\"] / np.sqrt(sex_income[\"n\"]))\nb = norm.ppf(0.025, sex_income[\"mean_income\"],\n             sex_income[\"std_income\"] / np.sqrt(sex_income[\"n\"]))\npd.DataFrame([a, b])             \n\n\n\n\n\n\n\n\n0\n1\n\n\n\n\n0\n191.755737\n357.962550\n\n\n1\n180.830455\n340.112592\n\n\n\n\n\n\n\n\n\n\n\nsns.barplot(data = sex_income, x = \"sex\", y = \"mean_income\",\n            hue = \"sex\")\nplt.plot([0,0], [a[0],b[0]], color=\"red\", linewidth=3)           \nplt.plot([1,1], [a[1],b[1]], color=\"red\", linewidth=3)\nplt.show()"
+  },
+  {
+    "objectID": "posts/hw5/hw.html",
+    "href": "posts/hw5/hw.html",
+    "title": "선아",
+    "section": "",
+    "text": "# ! pip install pyreadstat\nimport pandas as pd\nimport numpy as np\nimport seaborn as sns\n \n# 데이터 불러오기 \nraw_welfare = pd.read_spss(\"./data/Koweps/Koweps_hpwc14_2019_beta2.sav\")\nraw_welfare\n\n# 복사본 만들기\nwelfare = raw_welfare.copy()\n\n# 데이터 검토\nwelfare\nwelfare.shape\nwelfare.info()\n#welfare.describe()\n\nwelfare=welfare.rename(\n    columns = {\n        \"h14_g3\" : \"sex\",\n        \"h14_g4\" : \"birth\",\n        \"h14_g10\" : \"marriage_type\",\n        \"h14_g11\" : \"religion\",\n        \"p1402_8aq1\" : \"income\",\n        \"h14_eco9\" : \"code_job\",\n        \"h14_reg7\" : \"code_region\"\n    }\n)\nwelfare = welfare[[\"sex\", \"birth\", \"marriage_type\",\n                    \"religion\", \"income\", \"code_job\", \"code_region\"]]\nwelfare.shape\n\nwelfare[\"sex\"].dtypes\n\n#결측치 확인\nwelfare[\"sex\"].value_counts()\nwelfare[\"sex\"].isna().sum()\n\nwelfare[\"sex\"] = np.where(welfare[\"sex\"] == 1, \n                           \"male\", \"female\")\nwelfare[\"sex\"].value_counts()\n\nwelfare[\"income\"].describe()\n#안채워진 데이터가 9884개임.\nwelfare[\"income\"].isna().sum()\n\nsum(welfare[\"income\"] &gt; 9998)\n\nsex_income = welfare.dropna(subset=\"income\") \\\n            .groupby(\"sex\", as_index=False) \\\n            .agg(mean_income = (\"income\", \"mean\"))\nsex_income\n\nimport seaborn as sns\n\nsns.barplot(data = sex_income, x=\"sex\", y = \"mean_income\",\n            hue = \"sex\")\nplt.show()\nplt.clf()"
+  },
+  {
+    "objectID": "posts/hw5/index.html#위-아래-수직-막대기로-표시-아래-그림-참조",
+    "href": "posts/hw5/index.html#위-아래-수직-막대기로-표시-아래-그림-참조",
+    "title": "LS 빅데이터 스쿨 homework 5.",
+    "section": "",
+    "text": "# ! pip install pyreadstat\nimport pandas as pd\nimport numpy as np\nimport seaborn as sns\nfrom scipy.stats import norm\nimport matplotlib.pyplot as plt \n\n# 데이터 불러오기 \nraw_welfare = pd.read_spss(\"C:/Users/USER/Documents/LS빅데이터스쿨/mywebsite/data/koweps/Koweps_hpwc14_2019_beta2.sav\")\nraw_welfare\n\n# 복사본 만들기\nwelfare = raw_welfare.copy()\n\nwelfare=welfare.rename(\n    columns = {\n        \"h14_g3\" : \"sex\",\n        \"h14_g4\" : \"birth\",\n        \"h14_g10\" : \"marriage_type\",\n        \"h14_g11\" : \"religion\",\n        \"p1402_8aq1\" : \"income\",\n        \"h14_eco9\" : \"code_job\",\n        \"h14_reg7\" : \"code_region\"\n    }\n)\nwelfare = welfare[[\"sex\", \"birth\", \"marriage_type\",\n                    \"religion\", \"income\", \"code_job\", \"code_region\"]]\n\nwelfare[\"sex\"] = np.where(welfare[\"sex\"] == 1, \n                           \"male\", \"female\")\n\nwelfare[\"sex\"].value_counts()\n\nsex\nfemale    7913\nmale      6505\nName: count, dtype: int64"
+  },
+  {
+    "objectID": "posts/hw5/index.html#성별에-따른-평균-수입-및-표준편차-개수-구하기",
+    "href": "posts/hw5/index.html#성별에-따른-평균-수입-및-표준편차-개수-구하기",
+    "title": "LS 빅데이터 스쿨 homework 5.",
+    "section": "",
+    "text": "sex_income = welfare.dropna(subset=\"income\") \\\n            .groupby(\"sex\", as_index=False) \\\n            .agg(mean_income = (\"income\", \"mean\"),\n             std_income = (\"income\", \"std\"),\n             n = (\"sex\", \"count\"))\nsex_income\n\n\n\n\n\n\n\n\nsex\nmean_income\nstd_income\nn\n\n\n\n\n0\nfemale\n186.293096\n132.057402\n2245\n\n\n1\nmale\n349.037571\n217.862254\n2289"
+  },
+  {
+    "objectID": "posts/hw5/index.html#신뢰구간",
+    "href": "posts/hw5/index.html#신뢰구간",
+    "title": "LS 빅데이터 스쿨 homework 5.",
+    "section": "",
+    "text": "a = norm.ppf(0.975, sex_income[\"mean_income\"],\n             sex_income[\"std_income\"] / np.sqrt(sex_income[\"n\"]))\nb = norm.ppf(0.025, sex_income[\"mean_income\"],\n             sex_income[\"std_income\"] / np.sqrt(sex_income[\"n\"]))\npd.DataFrame([a, b])             \n\n\n\n\n\n\n\n\n0\n1\n\n\n\n\n0\n191.755737\n357.962550\n\n\n1\n180.830455\n340.112592"
+  },
+  {
+    "objectID": "posts/hw5/index.html#시각화",
+    "href": "posts/hw5/index.html#시각화",
+    "title": "LS 빅데이터 스쿨 homework 5.",
+    "section": "",
+    "text": "sns.barplot(data = sex_income, x = \"sex\", y = \"mean_income\",\n            hue = \"sex\")\nplt.plot([0,0], [a[0],b[0]], color=\"red\", linewidth=3)           \nplt.plot([1,1], [a[1],b[1]], color=\"red\", linewidth=3)\nplt.show()"
+=======
+>>>>>>> d153e74b01a0682e51a0e39f66d49d2657f75d56
+=======
+>>>>>>> d153e74b01a0682e51a0e39f66d49d2657f75d56
   }
 ]

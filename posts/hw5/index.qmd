@@ -1,0 +1,74 @@
+---
+title: "LS 빅데이터 스쿨 homework 5."
+author: "백선아"
+date: "2024-07-31"
+categories: [bigdata]
+jupyter: python3
+---
+
+# 챕터 9-2 설문조사 그래프에서 각 성별 95% 신뢰구간 계산후 그리기
+## norm.ppf() 사용해서 그릴 것. 모분산은 표본 분산을 사용해서 추정
+## 위 아래 수직 막대기로 표시 (아래 그림 참조)
+```{python}
+# ! pip install pyreadstat
+import pandas as pd
+import numpy as np
+import seaborn as sns
+from scipy.stats import norm
+import matplotlib.pyplot as plt 
+
+# 데이터 불러오기 
+raw_welfare = pd.read_spss("C:/Users/USER/Documents/LS빅데이터스쿨/mywebsite/data/koweps/Koweps_hpwc14_2019_beta2.sav")
+raw_welfare
+
+# 복사본 만들기
+welfare = raw_welfare.copy()
+
+welfare=welfare.rename(
+    columns = {
+        "h14_g3" : "sex",
+        "h14_g4" : "birth",
+        "h14_g10" : "marriage_type",
+        "h14_g11" : "religion",
+        "p1402_8aq1" : "income",
+        "h14_eco9" : "code_job",
+        "h14_reg7" : "code_region"
+    }
+)
+welfare = welfare[["sex", "birth", "marriage_type",
+                    "religion", "income", "code_job", "code_region"]]
+
+welfare["sex"] = np.where(welfare["sex"] == 1, 
+                           "male", "female")
+
+welfare["sex"].value_counts()
+
+
+```
+## 성별에 따른 평균 수입 및 표준편차, 개수 구하기
+```{python}
+sex_income = welfare.dropna(subset="income") \
+            .groupby("sex", as_index=False) \
+            .agg(mean_income = ("income", "mean"),
+             std_income = ("income", "std"),
+             n = ("sex", "count"))
+sex_income
+
+```
+## 신뢰구간
+```{python}
+a = norm.ppf(0.975, sex_income["mean_income"],
+             sex_income["std_income"] / np.sqrt(sex_income["n"]))
+b = norm.ppf(0.025, sex_income["mean_income"],
+             sex_income["std_income"] / np.sqrt(sex_income["n"]))
+pd.DataFrame([a, b])             
+```
+## 시각화
+```{python}
+sns.barplot(data = sex_income, x = "sex", y = "mean_income",
+            hue = "sex")
+plt.plot([0,0], [a[0],b[0]], color="red", linewidth=3)           
+plt.plot([1,1], [a[1],b[1]], color="red", linewidth=3)
+plt.show()
+```
+

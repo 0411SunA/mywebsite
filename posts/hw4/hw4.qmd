@@ -5,9 +5,9 @@ date: "2024-07-29"
 categories: [bigdata]
 jupyter: python3
 ---
-# 1.균일분포 (3, 7)에서 20개의 표본을 뽑아서 분산을 2가지 방법으로 추정해보세요.
-# 1. n-1로 나눈 것을 s_2, n으로 나눈 것을 k_2로 정의하고, s_2의 분포와 k_2의 분포를 그려주세요! (10000개 사용)
-# 2. 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요.
+## 1.균일분포 (3, 7)에서 20개의 표본을 뽑아서 분산을 2가지 방법으로 추정해보세요.
+### 1. n-1로 나눈 것을 s_2, n으로 나눈 것을 k_2로 정의하고, s_2의 분포와 k_2의 분포를 그려주세요! (10000개 사용)
+### 2. 분포 그래프에 모분산의 위치에 녹색 막대를 그려주세요.
 ```{python}
 # s_2 분포
 from scipy.stats import uniform
@@ -23,8 +23,9 @@ s_2
 # 히스토그램 그리기
 import seaborn as sns
 from scipy.stats import norm
-sns.histplot(s_2, stat="density", color = "orange")
-plt.axvline(x.var(), color="green", linewidth = 2)
+sns.histplot(s_2, stat="density", color = "green")
+plt.axvline(x.var(), color ="red", linewidth = 2)
+plt.xlim([0, 2.5])
 plt.show()
 plt.clf()
 ```
@@ -43,11 +44,12 @@ k_2
 # 히스토그램 그리기
 import seaborn as sns
 from scipy.stats import norm
-sns.histplot(k_2, stat="density", color = "orange")
-plt.axvline(x.var(), color="green",  linewidth = 2)
+sns.histplot(k_2, stat="density", color = "green")
+plt.axvline(x.var(), color="red",  linewidth = 2)
 plt.show()
 ```
 
 ## 3. 결과를 살펴보고, 왜 n-1로 나눈 것을 분산을 추정하는 지표로 사용하는 것이 타당한지 써주세요!
 
 ### 답변: 표본 분산 계산에서 n-1로 나눈 분포는 모분산인 1.33을 기준으로 좌우로 대칭인 모양을 띄는 반면 n으로 나눈 분포의 경우 모분산을 기준으로 좌우 대칭이지 않고 왼쪽으로 값이 쏠린 모양이기 때문에 모분산에 더 가까운 형태를 띄는 n-1로 나눈 것을 분산을 추정하는 지표로 사용한다.
+
