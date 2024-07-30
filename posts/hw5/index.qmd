@@ -67,8 +67,8 @@ pd.DataFrame([a, b])
 ```{python}
 sns.barplot(data = sex_income, x = "sex", y = "mean_income",
             hue = "sex")
-plt.plot([0,0], [a[0],b[0]], color="red", linewidth=3)           
-plt.plot([1,1], [a[1],b[1]], color="red", linewidth=3)
+plt.plot([0,0], [a[0],b[0]], color="red", linewidth=2)           
+plt.plot([1,1], [a[1],b[1]], color="red", linewidth=2)
 plt.show()
 ```
 
