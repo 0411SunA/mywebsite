@@ -413,6 +413,7 @@
     "text": "# s_2 분포\nfrom scipy.stats import uniform\nimport matplotlib.pyplot as plt\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx = x.reshape(-1,20)\nx.shape\n\ns_2 = x.var(axis=1, ddof=1)\ns_2\n\n# 히스토그램 그리기\nimport seaborn as sns\nfrom scipy.stats import norm\nsns.histplot(s_2, stat=\"density\", color = \"green\")\nplt.axvline(x.var(), color =\"red\", linewidth = 2)\nplt.xlim([0, 2.5])\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n\n# k_2 분포\nfrom scipy.stats import uniform\nimport matplotlib.pyplot as plt\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000)\nx = x.reshape(-1,20)\nx.shape\n\nk_2 = x.var(axis=1, ddof=0)\nk_2\n\n# 히스토그램 그리기\nimport seaborn as sns\nfrom scipy.stats import norm\nsns.histplot(k_2, stat=\"density\", color = \"green\")\nplt.axvline(x.var(), color=\"red\",  linewidth = 2)\nplt.show()"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   },
   {
     "objectID": "posts/hw5/index.html",
@@ -455,6 +456,8 @@
     "title": "LS 빅데이터 스쿨 homework 5.",
     "section": "",
     "text": "sns.barplot(data = sex_income, x = \"sex\", y = \"mean_income\",\n            hue = \"sex\")\nplt.plot([0,0], [a[0],b[0]], color=\"red\", linewidth=3)           \nplt.plot([1,1], [a[1],b[1]], color=\"red\", linewidth=3)\nplt.show()"
+=======
+>>>>>>> d153e74b01a0682e51a0e39f66d49d2657f75d56
 =======
 >>>>>>> d153e74b01a0682e51a0e39f66d49d2657f75d56
 =======
