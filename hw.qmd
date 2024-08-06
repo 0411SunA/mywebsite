@@ -1,0 +1,61 @@
+---
+title: "LS 빅데이터 스쿨 homework 6."
+author: "백선아"
+date: "2024-08-06"
+categories: [bigdata]
+jupyter: python3
+---
+
+
+
+
+
+
+
+```{python}
+# 유의 확률 p-value()
+# 교재 p.41
+from scipy.stats import t, norm
+import numpy as np
+
+```
+```{python}
+
+# 문제
+# 2. 검정을 위한 가설을 명확하게 서술하시오.
+# 평균 복합 에너지 소비효율이 16.0 이상일 것이다.
+# h_0 = mu0 >= 16.0
+# h_1 = mu0 < 16.0
+
+
+
+```
+
+```{python}
+# 3. 검정통계량 계산하시오. 모표준편차 모를때, 표본 크기가 작을 때 사용함. 표준화를!
+x = [15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927,\
+15.382, 16.709, 16.804]
+t_value = (np.mean(x) - 16) / (np.std(x, ddof=1) / np.sqrt(len(x)))
+round(t_value, 3)
+
+
+```
+
+```{python}
+# 4. p‑value을 구하세요.
+mean_x = np.mean(x)
+std_x = np.std(x, ddof=1)
+n = len(x)
+t.cdf(t_value, df=14) * 2
+
+```
+```{python}
+# 6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.
+import numpy as np
+
+ci_95 = t.interval(0.95, df=n-1, loc=mean_x,\
+scale=std_x/np.sqrt(n))
+print("모평균에 대한 95% 신뢰구간: ", np.round(ci_95, 2))
+
+```
+
