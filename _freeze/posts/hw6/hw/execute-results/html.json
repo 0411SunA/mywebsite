@@ -1,0 +1,12 @@
+{
+  "hash": "cd091c54779e1ecff3e671964ebe261e",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: LS 빅데이터 스쿨 homework 6.\nauthor: 백선아\ndate: '2024-08-06'\ncategories:\n  - bigdata\n---\n\n::: {#337b3dd8 .cell execution_count=1}\n``` {.python .cell-code}\n# 유의 확률 p-value()\n# 교재 p.41\nfrom scipy.stats import t, norm\nimport numpy as np\n```\n:::\n\n\n::: {#17ab0e86 .cell execution_count=2}\n``` {.python .cell-code}\n# 문제\n# 2. 검정을 위한 가설을 명확하게 서술하시오.\n# 평균 복합 에너지 소비효율이 16.0 이상일 것이다.\n# h_0 = mu0 >= 16.0\n# h_1 = mu0 < 16.0\n\n```\n:::\n\n\n::: {#136bbedd .cell execution_count=3}\n``` {.python .cell-code}\n# 3. 검정통계량 계산하시오. 모표준편차 모를때, 표본 크기가 작을 때 사용함. 표준화를!\nx = [15.078, 15.752, 15.549, 15.56, 16.098, 13.277, 15.462, 16.116, 15.214, 16.93, 14.118, 14.927,\\\n15.382, 16.709, 16.804]\nt_value = (np.mean(x) - 16) / (np.std(x, ddof=1) / np.sqrt(len(x)))\nround(t_value, 3)\n\n```\n\n::: {.cell-output .cell-output-display execution_count=3}\n```\nnp.float64(-1.85)\n```\n:::\n:::\n\n\n::: {#b9700a77 .cell execution_count=4}\n``` {.python .cell-code}\n# 4. p‑value을 구하세요.\nmean_x = np.mean(x)\nstd_x = np.std(x, ddof=1)\nn = len(x)\nt.cdf(t_value, df=14) * 2\n```\n\n::: {.cell-output .cell-output-display execution_count=4}\n```\nnp.float64(0.08552483532841569)\n```\n:::\n:::\n\n\n::: {#fc1a0282 .cell execution_count=5}\n``` {.python .cell-code}\n# 6. 현대자동차의 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구해보세요.\nimport numpy as np\n\nci_95 = t.interval(0.95, df=n-1, loc=mean_x,\\\nscale=std_x/np.sqrt(n))\nprint(\"모평균에 대한 95% 신뢰구간: \", np.round(ci_95, 2))\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n모평균에 대한 95% 신뢰구간:  [14.99 16.07]\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "hw_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
