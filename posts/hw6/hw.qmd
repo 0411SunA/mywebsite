@@ -6,12 +6,6 @@ categories: [bigdata]
 jupyter: python3
 ---
 
-
-
-
-
-
-
 ```{python}
 # 유의 확률 p-value()
 # 교재 p.41
