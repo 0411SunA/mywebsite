@@ -85,13 +85,12 @@ from sklearn.metrics import confusion_matrix
 
 pred_p = model.predict(df)
 
-# 2. 50% 기준으로 이진화 (0 또는 1로 변환)
+# 2. 50% 기준으로 0, 1 처리
 predictions = [1 if prob >= 0.5 else 0 for prob in pred_p]
 
-# 3. 실제 값 (df['REMISS'])과 예측 값 (predictions) 비교하여 혼동 행렬 계산
+# 3. 실제 값(df['REMISS'])과 예측 값 (predictions) 비교하여 혼동 행렬 계산
 conf_matrix = confusion_matrix(df['REMISS'], predictions)
 
-# 혼동 행렬 출력
 conf_matrix
 ```
 # 문제 9. 해당 모델의 Accuracy는 얼마인가요?
